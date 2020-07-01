@@ -170,3 +170,18 @@ const toggleStyle = () => {
     var theme = (pageStyle.getAttribute("href") === setLightPath) ? setDarkPath : setLightPath;
     pageStyle.setAttribute("href", theme)
 }
+const getNavIndex = (event) => {
+    let setActiveClass = event.currentTarget.setAttribute("class", "main-listing active")
+    let countVal = event.currentTarget.dataset.count;
+    let counter = document.getElementById("counter");
+    counter.innerText = countVal;
+}
+window.onload = function (){
+    rippleEffet();
+}
+let rippleEffet = () =>{
+    setTimeout(() => {
+        setRippleEffect = document.getElementsByClassName("rippleEffect");
+        setRippleEffect[0].setAttribute("class", "switch")
+    }, 4000);
+}

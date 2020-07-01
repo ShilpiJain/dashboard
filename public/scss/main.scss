@@ -1,3 +1,5 @@
+@import "./animate.scss";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -13,6 +15,7 @@ img {
 .d-flex {
 	display: flex;
 }
+
 .sub-heading {
 	color: #191f5d;
 	font-size: 14px;
@@ -55,6 +58,7 @@ img {
 			align-items: center;
 			justify-content: center;
 			border-radius: 3px;
+			transition: all .8s ease;
 		}
 		.profile {
 			width: 62px;
@@ -372,6 +376,7 @@ img {
 					left: 25px;
 					border-color: #233974;
 				}
+				
 			}
 		}
 	}
@@ -399,6 +404,63 @@ img {
 	.b {
 		display: inline-block;
 	}
+	.rippleEffect{
+		-webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.2);
+		box-shadow: 0 10px 10px 0 rgba(0,0,0,.2);
+		transition: all 0.8s ease-out;
+		&::before{
+			content: "";
+			-webkit-animation: ripple 1.3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+			animation: ripple 1.3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+			z-index: 1;
+			opacity: 0;
+			background: transparent;
+			border: 5px solid #1a205c;
+			position: absolute;
+			left: -10px;
+    		top: -10px;
+			border-radius: 60px;
+			height: 30px;
+			width: 30px;
+		  }
+		&::after {
+			content: "";
+			-webkit-animation: ripple 1.3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+			animation: ripple 1.3s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+			-webkit-animation-delay: .6s;
+			animation-delay: .6s;
+			z-index: 1;
+			opacity: 0;
+			background: transparent;
+			border: 5px solid #1a205c;	
+			position: absolute;
+			left: -10px;
+    		top: -10px;
+			border-radius: 60px;
+			height: 30px;
+			width: 30px;
+		}
+	}
+}
+@-webkit-keyframes  ripple {
+    0% {
+      -webkit-transform: scale(0.1);
+      opacity: 0.8;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      opacity: 0.0;
+    }
+}
+@keyframes ripple {
+    0% {
+      transform: scale(0.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.0;
+    }
 }
 @media only screen and (max-device-width: 1024px) {
 	.dashboard {
