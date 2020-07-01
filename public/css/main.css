@@ -1,0 +1,434 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif; }
+
+li {
+  list-style: none; }
+
+img {
+  max-width: 100px; }
+
+.d-flex {
+  display: flex; }
+
+.sub-heading {
+  color: #191f5d;
+  font-size: 14px;
+  margin-bottom: 20px;
+  position: relative; }
+  .sub-heading::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: rgba(68, 81, 158, 0.5);
+    bottom: -8px;
+    left: 0; }
+
+.hamburger-menu {
+  display: none; }
+
+.heading {
+  color: #191f5d;
+  font-weight: 500;
+  padding-top: 10px;
+  font-size: 28px;
+  padding-bottom: 60px; }
+
+.dashboard {
+  display: flex; }
+  .dashboard .panel {
+    flex-basis: 25%;
+    display: inline-grid;
+    grid-template-rows: 33vh 33vh 33vh;
+    position: fixed; }
+    .dashboard .panel .count {
+      background-color: #44519e;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      margin: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px; }
+    .dashboard .panel .profile {
+      width: 62px;
+      height: 62px;
+      bottom: 0;
+      position: absolute; }
+    .dashboard .panel ul li.main-listing {
+      padding: 25px 17px;
+      position: relative;
+      width: 64px;
+      cursor: pointer; }
+      .dashboard .panel ul li.main-listing img {
+        width: 30px; }
+      .dashboard .panel ul li.main-listing:first-child ul {
+        display: block; }
+      .dashboard .panel ul li.main-listing ul {
+        display: none;
+        top: 0;
+        left: 64px;
+        bottom: 0;
+        width: 20vw;
+        background: #f1f2f9;
+        position: fixed;
+        overflow-y: auto; }
+        .dashboard .panel ul li.main-listing ul h6 {
+          padding: 40px 60px;
+          font-size: 18px;
+          color: #464a7b; }
+        .dashboard .panel ul li.main-listing ul li {
+          padding: 30px 40px; }
+          .dashboard .panel ul li.main-listing ul li:hover, .dashboard .panel ul li.main-listing ul li:active, .dashboard .panel ul li.main-listing ul li.active {
+            background: #fff; }
+          .dashboard .panel ul li.main-listing ul li img {
+            width: 15px; }
+          .dashboard .panel ul li.main-listing ul li a {
+            display: flex;
+            text-decoration: none; }
+          .dashboard .panel ul li.main-listing ul li div {
+            padding-left: 15px; }
+            .dashboard .panel ul li.main-listing ul li div b {
+              color: #464a7b;
+              font-size: 16px;
+              line-height: 1.5; }
+            .dashboard .panel ul li.main-listing ul li div p {
+              color: #464a7b;
+              font-size: 14px; }
+      .dashboard .panel ul li.main-listing:hover ul {
+        display: block; }
+  .dashboard .main {
+    flex-basis: 75%;
+    padding-top: 0;
+    padding-left: 30px;
+    margin-left: 25%;
+    overflow-y: auto; }
+    .dashboard .main .overview {
+      display: flex; }
+      .dashboard .main .overview .left-panel {
+        margin-right: 4%;
+        padding-top: 44px;
+        margin-left: 4%;
+        flex-basis: 50%; }
+        .dashboard .main .overview .left-panel h4 {
+          font-size: 14px;
+          color: rgba(70, 74, 123, 0.7);
+          font-weight: 400; }
+        .dashboard .main .overview .left-panel h1 {
+          color: #191f5d;
+          font-weight: 500;
+          padding-top: 10px;
+          font-size: 28px;
+          padding-bottom: 60px; }
+        .dashboard .main .overview .left-panel .card-wrap {
+          margin-bottom: 45px; }
+          .dashboard .main .overview .left-panel .card-wrap .card {
+            width: 100%;
+            margin-right: 20px;
+            padding: 10px 16px;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08);
+            border-radius: 4px; }
+            .dashboard .main .overview .left-panel .card-wrap .card .card-detail {
+              margin-bottom: 10px; }
+              .dashboard .main .overview .left-panel .card-wrap .card .card-detail img {
+                max-width: 20px; }
+              .dashboard .main .overview .left-panel .card-wrap .card .card-detail .card-title {
+                margin-left: 15px; }
+                .dashboard .main .overview .left-panel .card-wrap .card .card-detail .card-title h6 {
+                  font-size: 14px;
+                  color: #191f5d;
+                  line-height: 1.5; }
+                .dashboard .main .overview .left-panel .card-wrap .card .card-detail .card-title p {
+                  font-size: 12px;
+                  color: #abafc7; }
+            .dashboard .main .overview .left-panel .card-wrap .card:last-of-type {
+              margin-right: 0; }
+        .dashboard .main .overview .left-panel .benchmark {
+          margin-bottom: 60px; }
+          .dashboard .main .overview .left-panel .benchmark h3 {
+            color: #191f5d;
+            font-size: 14px;
+            margin-bottom: 20px; }
+          .dashboard .main .overview .left-panel .benchmark .benchmark-card {
+            max-width: 40px;
+            width: 100%;
+            margin-right: 25px; }
+            .dashboard .main .overview .left-panel .benchmark .benchmark-card .benchmark-img {
+              width: 100%;
+              height: 37px;
+              border-radius: 3px;
+              box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 13px; }
+              .dashboard .main .overview .left-panel .benchmark .benchmark-card .benchmark-img img {
+                max-width: 10px; }
+            .dashboard .main .overview .left-panel .benchmark .benchmark-card p {
+              text-align: center;
+              font-size: 12px;
+              color: #191f5d; }
+            .dashboard .main .overview .left-panel .benchmark .benchmark-card:last-of-type {
+              margin: 0; }
+        .dashboard .main .overview .left-panel .stock .top-stock {
+          flex-basis: 50%; }
+          .dashboard .main .overview .left-panel .stock .top-stock .stock-details {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: center; }
+            .dashboard .main .overview .left-panel .stock .top-stock .stock-details img {
+              max-width: 25px; }
+            .dashboard .main .overview .left-panel .stock .top-stock .stock-details .stock-title {
+              margin-left: 17px;
+              flex-basis: 40%; }
+              .dashboard .main .overview .left-panel .stock .top-stock .stock-details .stock-title p {
+                font-size: 14px;
+                color: #191f5d;
+                line-height: 1;
+                font-weight: bold; }
+            .dashboard .main .overview .left-panel .stock .top-stock .stock-details label {
+              font-size: 12px;
+              color: #abafc7; }
+        .dashboard .main .overview .left-panel .stock .worst-stock {
+          flex-basis: 50%; }
+          .dashboard .main .overview .left-panel .stock .worst-stock .stock-details {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: center; }
+            .dashboard .main .overview .left-panel .stock .worst-stock .stock-details img {
+              max-width: 25px; }
+            .dashboard .main .overview .left-panel .stock .worst-stock .stock-details .stock-title {
+              margin-left: 17px;
+              flex-basis: 40%; }
+              .dashboard .main .overview .left-panel .stock .worst-stock .stock-details .stock-title p {
+                font-size: 14px;
+                color: #191f5d;
+                line-height: 1;
+                font-weight: bold; }
+            .dashboard .main .overview .left-panel .stock .worst-stock .stock-details label {
+              font-size: 12px;
+              color: #abafc7; }
+      .dashboard .main .overview .right-panel {
+        flex-basis: 38%;
+        margin-right: 2%; }
+        .dashboard .main .overview .right-panel .control {
+          width: 300px;
+          height: 90px;
+          background: #f1f2f8;
+          display: flex;
+          padding: 40px 80px 12px 50px;
+          justify-content: space-between;
+          align-items: center; }
+          .dashboard .main .overview .right-panel .control img {
+            width: 15px; }
+          .dashboard .main .overview .right-panel .control .hand-shake {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            background-color: #dc045c;
+            align-items: center;
+            border-radius: 4px; }
+        .dashboard .main .overview .right-panel .main-graph {
+          margin-bottom: 50px; }
+          .dashboard .main .overview .right-panel .main-graph .line-graph {
+            width: 100%; }
+            .dashboard .main .overview .right-panel .main-graph .line-graph .price {
+              font-size: 16px;
+              font-weight: 500;
+              color: #191f5d; }
+            .dashboard .main .overview .right-panel .main-graph .line-graph .market {
+              font-size: 14px;
+              line-height: 2;
+              color: #abafc7; }
+          .dashboard .main .overview .right-panel .main-graph ul {
+            display: flex;
+            color: #abafc7;
+            justify-content: space-between;
+            margin-top: 20px; }
+            .dashboard .main .overview .right-panel .main-graph ul li {
+              font-size: 12px;
+              text-transform: uppercase; }
+        .dashboard .main .overview .right-panel .stock-update ul {
+          display: flex;
+          width: 100%;
+          align-items: center;
+          justify-content: space-between; }
+          .dashboard .main .overview .right-panel .stock-update ul li {
+            width: 30%;
+            text-align: left; }
+            .dashboard .main .overview .right-panel .stock-update ul li label {
+              font-size: 10px;
+              color: #abafc7;
+              text-transform: uppercase; }
+            .dashboard .main .overview .right-panel .stock-update ul li p {
+              color: #191f5d;
+              font-size: 14px;
+              margin-bottom: 25px;
+              line-height: 2; }
+
+.toggle {
+  position: relative;
+  width: 50px;
+  height: 25px;
+  border-radius: 12px;
+  background-color: #ddd;
+  margin: 0; }
+  .toggle .check {
+    position: absolute;
+    display: block !important;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 6;
+    margin: 0; }
+    .toggle .check:checked ~ .track {
+      background: #223975; }
+    .toggle .check:checked ~ .switch {
+      right: 1px;
+      left: 25px;
+      border-color: #233974; }
+  .toggle .switch {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    bottom: 1px;
+    right: 25px;
+    border-radius: 36px;
+    z-index: 1;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.15);
+    border: 2px solid #dddddd;
+    transition: all .2s ease-out;
+    background: #fff; }
+  .toggle .track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 40px; }
+  .toggle .b {
+    display: inline-block; }
+
+@media only screen and (max-device-width: 1024px) {
+  .dashboard .main {
+    position: relative; }
+    .dashboard .main .overview {
+      display: block;
+      width: 100%;
+      padding-left: 10%;
+      padding-right: 10%; }
+      .dashboard .main .overview .left-panel {
+        width: 100%;
+        margin: 0; }
+      .dashboard .main .overview .right-panel {
+        width: 100%; }
+        .dashboard .main .overview .right-panel .control {
+          position: absolute;
+          top: 0;
+          right: 0; }
+  .dashboard .panel ul li.main-listing ul {
+    width: 25vw; } }
+
+@media only screen and (max-device-width: 768px) {
+  .dashboard .main {
+    flex-basis: 85%;
+    margin-left: 10%;
+    margin-right: 5%; }
+    .dashboard .main .overview {
+      padding-left: 0;
+      padding-right: 0; }
+  .dashboard .panel {
+    z-index: 9;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08); }
+    .dashboard .panel ul li.main-listing ul li img {
+      width: 25px; }
+    .dashboard .panel ul li.main-listing ul li div b {
+      font-size: 20px; }
+    .dashboard .panel ul li.main-listing ul li div p {
+      font-size: 17px; }
+    .dashboard .panel ul li.main-listing:first-of-type ul {
+      display: none; }
+    .dashboard .panel ul li.main-listing:hover {
+      display: block; }
+      .dashboard .panel ul li.main-listing:hover ul {
+        display: block;
+        width: 30vh;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08); } }
+
+@media only screen and (max-device-width: 576px) {
+  .dashboard .panel {
+    flex-basis: 100%;
+    z-index: 999999;
+    background-color: #fff; }
+    .dashboard .panel ul {
+      position: fixed;
+      right: 0;
+      left: auto;
+      bottom: 100px; }
+      .dashboard .panel ul li.main-listing {
+        padding: 12px;
+        background-color: #000;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        width: auto;
+        background-color: #495d8d; }
+        .dashboard .panel ul li.main-listing:hover ul {
+          display: block;
+          width: 45vh;
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08); }
+        .dashboard .panel ul li.main-listing img {
+          width: 22px; }
+        .dashboard .panel ul li.main-listing ul {
+          width: 35vw;
+          left: 0; }
+          .dashboard .panel ul li.main-listing ul h6 {
+            padding: 20px 20px;
+            font-size: 14px; }
+          .dashboard .panel ul li.main-listing ul li {
+            padding: 10px 10px; }
+            .dashboard .panel ul li.main-listing ul li img {
+              width: 14px; }
+            .dashboard .panel ul li.main-listing ul li div b {
+              font-size: 14px; }
+            .dashboard .panel ul li.main-listing ul li div p {
+              font-size: 12px;
+              color: rgba(70, 74, 123, 0.38); }
+    .dashboard .panel .count {
+      display: none; }
+    .dashboard .panel .profile {
+      border-radius: 50%;
+      overflow: hidden;
+      position: fixed;
+      right: 7px;
+      bottom: 7px; }
+  .dashboard .main {
+    flex-basis: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0;
+    padding-top: 60px; }
+    .dashboard .main .overview {
+      width: 100%; }
+      .dashboard .main .overview .left-panel .benchmark-wrapper {
+        display: block; }
+        .dashboard .main .overview .left-panel .benchmark-wrapper .benchmark-card {
+          display: inline-block; }
+      .dashboard .main .overview .left-panel .card-wrap {
+        padding-bottom: 10px;
+        display: block; }
+      .dashboard .main .overview .left-panel .stock {
+        display: block; }
+      .dashboard .main .overview .right-panel .hamburger-menu {
+        display: none; }
+      .dashboard .main .overview .right-panel .control {
+        padding: 15px 40px;
+        width: calc(100% - 80px);
+        height: auto; } }
