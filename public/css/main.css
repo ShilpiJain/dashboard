@@ -627,9 +627,12 @@ h4 {
       .dashboard .panel ul li .subnavigation ul li img {
         width: 25px; }
       .dashboard .panel ul li .subnavigation ul li div b {
-        font-size: 20px; }
+        font-size: 20px;
+        text-align: left;
+        display: block; }
       .dashboard .panel ul li .subnavigation ul li div p {
-        font-size: 17px; }
+        font-size: 17px;
+        text-align: left; }
     .dashboard .panel ul li.active .subnavigation {
       display: block; } }
 
@@ -665,7 +668,8 @@ h4 {
             font-size: 14px; }
           .dashboard .panel ul li .subnavigation ul li {
             padding: 10px 5%;
-            display: block; }
+            display: block;
+            background-color: transparent; }
             .dashboard .panel ul li .subnavigation ul li div b {
               font-size: 14px; }
             .dashboard .panel ul li .subnavigation ul li div p {

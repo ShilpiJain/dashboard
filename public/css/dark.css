@@ -685,7 +685,8 @@ h4 {
             font-size: 14px; }
           .dashboard .panel ul li .subnavigation ul li {
             padding: 10px 5%;
-            display: block; }
+            display: block;
+            background-color: transparent; }
             .dashboard .panel ul li .subnavigation ul li div b {
               font-size: 14px; }
             .dashboard .panel ul li .subnavigation ul li div p {

@@ -576,9 +576,12 @@ h4 {
 								div {
 									b {
 										font-size: 20px;
+										text-align: left;
+										display: block;
 									}
 									p {
 										font-size: 17px;
+										text-align: left;
 									}
 								}
 							}
@@ -635,6 +638,7 @@ h4 {
 							li {
 								padding: 10px 5%;
 								display: block;
+								background-color: transparent;
 								div {
 									b {
 										font-size: 14px;

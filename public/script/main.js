@@ -205,6 +205,6 @@ let menuHanddle =()=>{
         for(i =0; i < mainLi.length; i++){
             mainLi[i].setAttribute("class", "main-listing");
         }
-        event.currentTarget.setAttribute("class", "main-listing active");
+        // event.currentTarget.setAttribute("class", "main-listing active");
     }
 }
