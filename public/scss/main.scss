@@ -72,6 +72,11 @@ img {
 				position: relative;
 				width: 64px;
 				cursor: pointer;
+				&:hover {
+					ul {
+						display: block;
+					}
+				}
 				img {
 					width: 30px;
 				}
@@ -89,6 +94,7 @@ img {
 					background: #f1f2f9;
 					position: fixed;
 					overflow-y: auto;
+					transition: all 0.2s ease;
 					h6 {
                         padding: 40px 60px;
                         font-size: 18px;
@@ -96,8 +102,17 @@ img {
 					}
 					li {
 						padding: 30px 40px;
+						background-position: right;
+						transition: background 0.8s;
+						border: none;
+						outline: none;
+						background: #f1f2f8 radial-gradient(circle, transparent 1%, #f1f2f8 1%) center/15000%;
 						&:hover, &:active, &.active {
 							background: #fff;
+							background-position: center;
+							background-color: #fff;
+							background-size: 100%;
+							transition: background 0s;
 						}
 						img {
 							width: 15px;
@@ -120,11 +135,7 @@ img {
 						}
 					}
 				}
-				&:hover {
-					ul {
-						display: block;
-					}
-				}
+				
 			}
 		}
 	}

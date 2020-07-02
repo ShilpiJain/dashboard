@@ -162,26 +162,39 @@ var myChart = new Chart(ctx, {
     }
 });
 
+// Toggle CSS
 let setDarkPath = `public/css/dark.css`;
 let setLightPath = `public/css/main.css`;
 var pageStyle = document.getElementById('pagestyle');
-
 const toggleStyle = () => {
     var theme = (pageStyle.getAttribute("href") === setLightPath) ? setDarkPath : setLightPath;
     pageStyle.setAttribute("href", theme)
 }
+
+//active class and counter on click of menu
 const getNavIndex = (event) => {
-    let setActiveClass = event.currentTarget.setAttribute("class", "main-listing active")
+    let liNodes = document.getElementsByClassName("main-listing");
+    for(i =0; i < liNodes.length; i++){
+        liNodes[i].setAttribute("class", "main-listing");
+    }
+    event.currentTarget.setAttribute("class", "main-listing active");
     let countVal = event.currentTarget.dataset.count;
     let counter = document.getElementById("counter");
     counter.innerText = countVal;
 }
+
 window.onload = function (){
-    rippleEffet();
+    rippleEffet();  
 }
+
+// ripple effect first time for user
 let rippleEffet = () =>{
-    setTimeout(() => {
-        setRippleEffect = document.getElementsByClassName("rippleEffect");
-        setRippleEffect[0].setAttribute("class", "switch")
-    }, 4000);
+    if(localStorage.getItem('animation') == null){
+        setRippleEffect = document.getElementsByClassName("switch");
+        localStorage.setItem('animation', "aniamted");
+        setRippleEffect[0].setAttribute("class", "switch rippleEffect");
+        setTimeout(() => {
+            setRippleEffect[0].setAttribute("class", "switch");
+        }, 4000);  
+    }   
 }
