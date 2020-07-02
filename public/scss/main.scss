@@ -1,5 +1,5 @@
-@import "./animate.scss";
 @import "./variable.scss";
+@import "./font.scss";
 
 * {
 	margin: 0;
@@ -58,8 +58,23 @@ h4 {
 	color: rgba(70, 74, 123, 0.7);
 	font-weight: 400;
 }
-.hamburger-menu {
-	display: none;
+.close{
+	position: relative;
+    background: rgba(220, 6, 91, 0.5);
+	width: 50px;
+    height: 50px;
+    margin: 7px;
+    left: 0;
+    top: 0;
+    text-align: center;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	z-index: 9;
+	img{
+		max-width: 20px;
+	}
 }
 // menu panel
 .panel {
@@ -136,22 +151,7 @@ h4 {
 					font-size: 18px;
 					color: #464a7b;
 				}
-				.close{
-					position: relative;
-					background: rgba(220, 6, 91, 0.5);
-					width: 30px;
-					height: 30px;
-					left: calc(100% - 30px);
-					bottom: 20px;
-					text-align: center;
-					border-radius: 3px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					img{
-						max-width: 20px;
-					}
-				}
+				
 				ul {
 					position: relative;
 					li {
@@ -388,7 +388,7 @@ h4 {
 	margin: 0;
 	.check {
 		position: absolute;
-		display: block !important;
+		display: block;
 		cursor: pointer;
 		top: 0;
 		left: 0;
@@ -525,6 +525,7 @@ h4 {
 		}
 		.main {
 			position: relative;
+			padding-bottom: 50px;
 			.overview {
 				display: block;
 				width: 100%;
@@ -551,6 +552,7 @@ h4 {
 @media only screen and (max-width: 768px) {
 	.dashboard {
 		.main {
+			
 			flex-basis: 85%;
 			margin-left: 10%;
 			margin-right: 5%;
@@ -561,7 +563,6 @@ h4 {
 		}
 		.panel {
 			z-index: 9;
-			box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08);
 			ul {
 				li{
 					.subnavigation{
@@ -586,6 +587,7 @@ h4 {
 					&.active{
 						.subnavigation{
 							display: block;
+							// left: 64px !important;
 						}
 					}
 				}
@@ -696,5 +698,11 @@ h4 {
 				}
 			}
 		}
+	}
+}
+@media only screen and (max-device-width : 812px) and (orientation : landscape) { 
+	.panel ul li{
+		text-align: center;
+		padding: 14px;
 	}
 }

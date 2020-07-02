@@ -195,15 +195,16 @@ let rippleEffet = () =>{
         setRippleEffect[0].setAttribute("class", "switch rippleEffect");
         setTimeout(() => {
             setRippleEffect[0].setAttribute("class", "switch");
-        }, 4000);  
+        }, 6000);  
     }   
 }
-// let slideMenu = () =>{
-//     let menu = document.getElementsByClassName("subnavigation");
-//     let main = document.getElementsByClassName("main");
-//     for(i =0; i < menu.length; i++){
-//         var menuSlide = menu[i].style.left = "-150%"
-//     }
-//     main[0].style.marginLeft = "64px"
-//     main[0].style.flexBasis = "100%"
-// }
+
+let menuHanddle =()=>{
+    if(window.screen.width <= 768){
+        let mainLi = document.getElementsByClassName("main-listing");
+        for(i =0; i < mainLi.length; i++){
+            mainLi[i].setAttribute("class", "main-listing");
+        }
+        event.currentTarget.setAttribute("class", "main-listing active");
+    }
+}

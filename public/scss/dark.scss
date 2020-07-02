@@ -1,6 +1,9 @@
-@import "./animate.scss";
 @import "./variable.scss";
+@import "./font.scss";
 
+body{
+	background-color: $black-bg;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -18,7 +21,7 @@ img {
 }
 // 
 .heading {
-	color: #191f5d;
+	color: $sky-blue;
 	font-weight: 500;
 	padding-top: 10px;
 	font-size: 28px;
@@ -26,7 +29,7 @@ img {
 }
 // sub headings
 .sub-heading {
-	color: #191f5d;
+	color: $cherry-pink;
 	font-size: 14px;
 	margin-bottom: 20px;
 	position: relative;
@@ -42,14 +45,14 @@ img {
 }
 
 h1 {
-	color: #191f5d;
+	color: $heading;
 	font-weight: 500;
 	padding-top: 10px;
 	font-size: 28px;
 	padding-bottom: 60px;
 }
 h3 {
-	color: #191f5d;
+	color: $heading;
 	font-size: 14px;
 	margin-bottom: 20px;
 }
@@ -58,8 +61,23 @@ h4 {
 	color: rgba(70, 74, 123, 0.7);
 	font-weight: 400;
 }
-.hamburger-menu {
-	display: none;
+.close{
+	position: relative;
+    background: rgba(220, 6, 91, 0.5);
+	width: 50px;
+    height: 50px;
+    margin: 7px;
+    left: 0;
+    top: 0;
+    text-align: center;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+	justify-content: center;
+	z-index: 9;
+	img{
+		max-width: 20px;
+	}
 }
 // menu panel
 .panel {
@@ -105,7 +123,7 @@ h4 {
 			&.active{
 				background-color: rgb(220, 6, 91);
 				path{
-					fill: #fff;
+					fill: $icon;
 				}
 				.subnavigation {
 					display: block;
@@ -127,7 +145,7 @@ h4 {
 				left: 64px;
 				bottom: 0;
 				width: 20vw;
-				background: #f1f2f9;
+				background: $dark-solid-bg;
 				position: fixed;
 				overflow-y: auto;
 				transition: all 0.2s ease;
@@ -136,32 +154,17 @@ h4 {
 					font-size: 18px;
 					color: #464a7b;
 				}
-				.close{
-					position: relative;
-					background: rgba(220, 6, 91, 0.5);
-					width: 30px;
-					height: 30px;
-					left: calc(100% - 30px);
-					bottom: 20px;
-					text-align: center;
-					border-radius: 3px;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					img{
-						max-width: 20px;
-					}
-				}
+				
 				ul {
 					position: relative;
 					li {
 						padding: 30px 40px;
 						background-position: center;
 						transition: background 0.8s;
-						background: #f1f2f8 radial-gradient(circle, transparent 1%, #f1f2f8 1%) center/15000%;
+						background: $solid-back-card radial-gradient(circle, transparent 1%, $solid-back-card 1%) center/15000%;
 						width: 100%;
 						&:hover, &:active, &.active {
-							background: #fff;
+							background-color: $dark-hover;
 							background-position: center;
 							background-size: 100%;
 							transition: background 0s;
@@ -175,18 +178,18 @@ h4 {
 						}
 						svg{
 							path{
-								fill: #c8135c6b;
+								fill: $icon;
 							}
 						}
 						div {
 							padding-left: 15px;
 							b {
-								color: #464a7b;
+								color: $primary-text;
 								font-size: 16px;
 								line-height: 1.5;
 							}
 							p {
-								color: rgba(70, 74, 123, 0.36);
+								color: $second-text;
 								font-size: 14px;
 							}
 						}
@@ -211,7 +214,7 @@ h4 {
 .left-panel {
 	margin-right: 4%;
 	padding-top: 44px;
-	margin-left: 4%;
+	// margin-left: 4%;
 	flex-basis: 50%;
 }
 // stock cards with graph
@@ -223,8 +226,12 @@ h4 {
 		padding: 10px 16px;
 		box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08);
 		border-radius: 4px;
+		background-color: #242526;
 		.card-detail {
 			margin-bottom: 10px;
+			&:last-of-type {
+				margin-right: 0;
+			}
 			img {
 				max-width: 20px;
 			}
@@ -232,7 +239,7 @@ h4 {
 				margin-left: 15px;
 				h6 {
 					font-size: 14px;
-					color: #191f5d;
+					color: $heading;
 					line-height: 1.5;
 				}
 				p {
@@ -240,49 +247,59 @@ h4 {
 					color: #abafc7;
 				}
 			}
+			
 		}
-		&:last-of-type {
-			margin-right: 0;
-		}
+		
 	}
 }
 // benchmaker
 .benchmark {
 	margin-bottom: 60px;
-	.benchmark-card {
-		max-width: 40px;
-		width: 100%;
-		margin-right: 25px;
-		.benchmark-img {
+	.benchmark-wrapper{
+		background-color: $solid-back-card;
+		padding-bottom: 10px;
+		.benchmark-card {
+			max-width: 40px;
 			width: 100%;
-			height: 37px;
-			border-radius: 3px;
-			box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08);
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-bottom: 13px;
-			img {
-				max-width: 10px;
+			margin-right: 25px;
+			.benchmark-img {
+				width: 100%;
+				height: 37px;
+				border-radius: 3px;
+				box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 13px;
+				img {
+					max-width: 10px;
+				}
+			}
+			p {
+				text-align: center;
+				font-size: 12px;
+				color: $heading;
+			}
+			&:last-of-type {
+				margin: 0;
 			}
 		}
-		p {
-			text-align: center;
-			font-size: 12px;
-			color: #191f5d;
-		}
-		&:last-of-type {
-			margin: 0;
-		}
 	}
+	
 }
 // stocks
 .top-stock {
 	flex-basis: 50%;
 	.stock-details {
 		display: flex;
-		margin-bottom: 25px;
+		padding-bottom: 12px;
 		align-items: center;
+		background-color: $solid-back-card;
+		padding-top: 12px;
+		padding-left: 10px;
+		border-bottom: 1px solid #5f5f5f;
+		margin-right: 15px;
+		border-radius: 3px;
 		img {
 			max-width: 25px;
 		}
@@ -291,7 +308,7 @@ h4 {
 			flex-basis: 40%;
 			p {
 				font-size: 14px;
-				color: #191f5d;
+				color:$heading;
 				line-height: 1;
 				font-weight: bold;
 			}
@@ -305,7 +322,7 @@ h4 {
 //Right half dashboard
 .right-panel {
 	flex-basis: 38%;
-	margin-right: 2%;
+	padding-right: 2%;
 	.control {
 		width: 300px;
 		height: 90px;
@@ -331,10 +348,12 @@ h4 {
 		margin-bottom: 50px;
 		.line-graph {
 			width: 100%;
+			background-color: $solid-back-card;
+			padding: 20px;
 			.price {
 				font-size: 16px;
 				font-weight: 500;
-				color: #191f5d;
+				color: $heading;
 			}
 			.market {
 				font-size: 14px;
@@ -357,20 +376,27 @@ h4 {
 // stock-updates
 .stock-update {
 	ul {
-		display: flex;
+		display: grid;
 		width: 100%;
 		align-items: center;
 		justify-content: space-between;
+		background-color: $solid-back-card;
+		padding-top: 13px;
+		padding-left: 10px;
+		grid-template-columns: 30% 30% 30%;
 		li {
-			width: 30%;
 			text-align: left;
+			border-right: 1px solid #5f5f5f;
+			&:last-of-type{
+				border: none;
+			}
 			label {
 				font-size: 10px;
 				color: #abafc7;
 				text-transform: uppercase;
 			}
 			p {
-				color: #191f5d;
+				color: $heading;
 				font-size: 14px;
 				margin-bottom: 25px;
 				line-height: 2;
@@ -388,7 +414,7 @@ h4 {
 	margin: 0;
 	.check {
 		position: absolute;
-		display: block !important;
+		display: block;
 		cursor: pointer;
 		top: 0;
 		left: 0;
@@ -525,6 +551,7 @@ h4 {
 		}
 		.main {
 			position: relative;
+			padding-bottom: 50px;
 			.overview {
 				display: block;
 				width: 100%;
@@ -561,7 +588,6 @@ h4 {
 		}
 		.panel {
 			z-index: 9;
-			box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.08);
 			ul {
 				li{
 					.subnavigation{
@@ -615,7 +641,7 @@ h4 {
 					svg{
 						max-width: 20px;
 						path{
-							fill: #fff;
+							fill: $icon;
 						}
 					}
 					img {
@@ -696,5 +722,12 @@ h4 {
 				}
 			}
 		}
+	}
+}
+// landscape
+@media only screen and (max-device-width : 812px) and (orientation : landscape) { 
+	.panel ul li{
+		text-align: center;
+		padding: 14px;
 	}
 }
