@@ -172,7 +172,7 @@ const toggleStyle = () => {
 }
 
 //active class and counter on click of menu
-const getNavIndex = (event) => {
+let getNavIndex = (event) => {
     let liNodes = document.getElementsByClassName("main-listing");
     for(i =0; i < liNodes.length; i++){
         liNodes[i].setAttribute("class", "main-listing");
@@ -198,3 +198,12 @@ let rippleEffet = () =>{
         }, 4000);  
     }   
 }
+// let slideMenu = () =>{
+//     let menu = document.getElementsByClassName("subnavigation");
+//     let main = document.getElementsByClassName("main");
+//     for(i =0; i < menu.length; i++){
+//         var menuSlide = menu[i].style.left = "-150%"
+//     }
+//     main[0].style.marginLeft = "64px"
+//     main[0].style.flexBasis = "100%"
+// }
